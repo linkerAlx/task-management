@@ -10,8 +10,8 @@ type StateContextType = {
     setUser: Dispatch<SetStateAction<User | null>>;
     addTask: boolean;
     setAddTask: Dispatch<SetStateAction<boolean>>,
-    expandedOrderId: number | null,
-    setExpandedOrderId: Dispatch<SetStateAction<number | null>>
+    expandedOrderId: number | undefined,
+    setExpandedOrderId: Dispatch<SetStateAction<number | undefined>>
 };
 
 const context = createContext<StateContextType | undefined>(undefined);
@@ -19,7 +19,7 @@ const context = createContext<StateContextType | undefined>(undefined);
 export const StateContext = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
     const [addTask, setAddTask] = useState(false);
-    const [expandedOrderId, setExpandedOrderId] = useState<number | null>(0);
+    const [expandedOrderId, setExpandedOrderId] = useState<number | undefined>(undefined);
 
     useEffect(() => {
         const token = Cookies.get("clientToken");

@@ -44,7 +44,7 @@ const TaskComponent = ({
           <p className="font-bold capitalize">{title}</p>
           <button onClick={() => {
             setShowActionButton((prev) => !prev)
-            setExpandedOrderId(isExpanded ? null : id)
+            setExpandedOrderId(isExpanded ? undefined : id)
           }}>
             <IoMdMore />
           </button>
